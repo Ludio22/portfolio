@@ -38,6 +38,20 @@ svg {
   width: 100%;
 }
 
+.App {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -76,14 +90,16 @@ textarea:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.header svg {
+  background-color: #5b6ee1;
+  border-bottom: 1px solid #8c9cff;
+  top: 0;
   position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .header .container {
-  position: fixed;
+  z-index: 1;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,7 +108,7 @@ textarea:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: white;
-  padding-top: 24px;
+  padding: 24px 30px;
 }
 
 .header__link {
@@ -105,7 +121,7 @@ textarea:focus {
 }
 
 .preview {
-  padding-top: 146px;
+  padding: 146px 30px 0 30px;
 }
 
 .preview .container {
@@ -140,16 +156,47 @@ textarea:focus {
 }
 
 .preview .about__text {
-  font-size: 28px;
+  text-align: justify;
+  font-size: 22px;
   font-weight: 500;
   color: #7e7e7e;
   width: 75%;
-  text-align: center;
 }
 
 .preview img {
   border-radius: 50%;
   border: 3px solid;
+}
+
+.about-page .about__stack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-page .about__stack img {
+  width: 100%;
+}
+
+.about-page .about__technnology {
+  width: 12%;
+}
+
+.about-page p {
+  margin: 2em 0;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Roboto';
+  color: #454545;
+}
+
+.about-page h2 {
+  text-align: center;
+  margin: 1em 0;
+  color: #454545;
 }
 
 .projects {
@@ -166,7 +213,8 @@ textarea:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 220px 0 35px 0;
+  margin-bottom: 35px;
+  margin-top: calc(77px + 35px);
   background-color: #5b6ee1;
 }
 
@@ -189,7 +237,7 @@ textarea:focus {
           align-items: center;
 }
 
-.projects__container > a {
+.projects__container .more {
   margin: 2em 0;
 }
 
@@ -233,7 +281,12 @@ textarea:focus {
 }
 
 .projects__text {
-  font-size: 28px;
+  font-size: 26px;
+  margin: 8px 0;
+}
+
+.projects__text.small {
+  font-size: 22px;
 }
 
 .form {
@@ -272,22 +325,122 @@ textarea:focus {
 }
 
 footer {
+  background-color: #5b6ee1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-footer svg {
-  position: absolute;
+  padding: 24px 0;
+  border-top: 1px solid #8c9cff;
 }
 
 footer small {
   color: white;
-  position: absolute;
-  -webkit-transform: translateY(120px);
-          transform: translateY(120px);
+}
+
+@media (max-width: 992px) {
+  .avatar {
+    display: none;
+  }
+  .projects {
+    padding: 0 30px;
+  }
+  .projects__item {
+    height: auto;
+  }
+  .form {
+    width: 70%;
+  }
+  .about-page .about__technnology {
+    width: auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.333%;
+            flex: 0 1 33.333%;
+  }
+  .about__stack {
+    padding: 0 30px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+  .header .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header__link {
+    margin-right: 0px !important;
+  }
+  .preview .about__text {
+    width: auto;
+  }
+  .preview .about__title {
+    text-align: center;
+  }
+  h1 {
+    width: auto;
+  }
+  .projects__info {
+    width: auto;
+  }
+  .projects__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .projects__item > img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page .about__technnology {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 80%;
+            flex: 0 1 80%;
+  }
+  .about-page .about__stack {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .form {
+    width: auto;
+    margin: 30px;
+  }
+  .form .contact-form {
+    width: 80%;
+  }
+  .form h2 {
+    font-size: 2em;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

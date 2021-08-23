@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Btn = (props) => {
     return(
-          <Link to={props.url} className="btn">{props.text}</Link>
+        <div className="more">
+            {props.url !== undefined ?
+                <Link to={props.url} className="btn">{props.text}</Link>
+                : 
+                <Link onClick={props.upLoadProjects} className="btn">{props.text}</Link>
+            }
+        </div>
     );
 }
 

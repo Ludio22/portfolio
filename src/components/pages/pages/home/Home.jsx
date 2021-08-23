@@ -6,8 +6,8 @@ import Projects from './projects-section/Projects';
 const Home = () => {
     return(
         <div>
-            <Preview />
-            <Projects />
+            <Preview about="I am a Front-end developer from cold Russia, I love web programming, video games and fall."/>
+            <Projects isBtnAll={true} />
             <Contact />
         </div>
     );

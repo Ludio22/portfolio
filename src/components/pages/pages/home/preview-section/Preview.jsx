@@ -1,14 +1,14 @@
 import React from 'react';
-import avatar from '../../../../../media/me_portfolio.png';
+import avatar from '../../../../../media/me_portfolio.webp';
 import AboutMe from './body/AboutMe';
 import Avatar from './body/Avatar';
 
-const Preview = () => {
+const Preview = (props) => {
     return(
         <section className="preview">
             <div className="container">
                 <Avatar avatar={avatar}/>
-                <AboutMe about="I am a Front-end developer from cold Russia, I love web programming, video games and fall." />
+                <AboutMe about={props.about} />
             </div>
         </section>
     );

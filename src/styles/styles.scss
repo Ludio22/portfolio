@@ -41,6 +41,13 @@ svg {
     width: 100%;
 }
 
+.App{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -75,16 +82,19 @@ textarea {
     font-size: 24px;
     display: flex;
     justify-content: center;
-    svg {
-        position: fixed;
-    }
+    background-color: #5b6ee1;
+    border-bottom: 1px solid #8c9cff;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     .container {
-        position: fixed;
+        z-index: 1;
         width: 100%;
         display: flex;
         justify-content: space-between;
         color: white;
-        padding-top: 24px;
+        padding: 24px 30px;
     }
     &__link {
         text-decoration: none;
@@ -96,7 +106,7 @@ textarea {
 }
 
 .preview {
-    padding-top: 146px;
+    padding: 146px 30px 0 30px;
     .container {
         display: flex;
     }
@@ -112,16 +122,41 @@ textarea {
             color: $blue;
         }
         &__text {
-            font-size: 28px;
+            text-align: justify;
+            font-size: 22px;
             font-weight: 500;
             color: #7e7e7e;
             width: 75%;
-            text-align: center;
         }
     }
     img {
         border-radius: 50%;
         border: 3px solid;
+    }
+}
+
+.about-page{
+    .about__stack{
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 100%;
+        }
+    }
+    .about__technnology{
+        width: 12%;
+    }
+    p {
+        margin: 2em 0;
+        text-align: center;
+        font-size: 24px;
+        font-family: 'Roboto';
+        color: $gray;
+    }
+    h2{
+        text-align: center;
+        margin: 1em 0;
+        color: $gray;
     }
 }
 
@@ -133,7 +168,8 @@ textarea {
     h2 {
         margin: 0.5em 0 0.5em 0;
     }
-    margin: 220px 0 35px 0;
+    margin-bottom: 35px;
+    margin-top: calc(77px + 35px);
     background-color: $blue;
     &__container {
         max-width: 792px;
@@ -141,7 +177,7 @@ textarea {
         display: flex;
         flex-direction: column;
         align-items: center;
-        > a {
+        .more {
             margin: 2em 0;
         }
     }
@@ -169,7 +205,11 @@ textarea {
         text-align: center;
     }
     &__text {
-        font-size: 28px;
+        font-size: 26px;
+        margin: 8px 0;
+        &.small{
+            font-size: 22px;
+        }
     }
 }
 
@@ -194,14 +234,104 @@ textarea {
 }
 
 footer {
+    background-color: #5b6ee1;
     display: flex;
     justify-content: center;
-    svg {
-        position: absolute;
-    }
+    padding: 24px 0;
+    border-top: 1px solid #8c9cff;
     small {
         color: white;
-        position: absolute;
-        transform: translateY(120px);
+    }
+}
+
+@media (max-width: 992px) {
+    .avatar{
+        display: none;
+    }
+    .projects{
+        padding: 0 30px;
+        &__item{
+            height: auto;
+        }    
+    }
+    .form{
+        width: 70%;
+    }
+    .about-page {
+        .about__technnology{
+            width: auto;
+            flex: 0 1 33.333%;
+        }
+    }
+    .about__stack{
+        padding: 0 30px;
+        flex-wrap: wrap;
+    }
+    h1{
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .header{
+        position: relative;
+        .container{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__nav{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__link{
+            margin-right: 0px !important;
+        }
+    }
+	.preview{
+        .about{
+            &__text{
+                width: auto;
+            }
+            &__title{
+                text-align: center;
+            }
+        }
+    }
+    h1{
+        width: auto;
+    }
+    .projects{
+        &__info{
+            width: auto;
+        }
+        &__item{
+            flex-direction: column-reverse;
+            >img{
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+	.about-page {
+        .about__technnology{
+            flex: 0 1 80%;
+        }
+        .about__stack{
+            justify-content: center;
+        }
+    }
+    .form{
+        width: auto;
+        margin: 30px;
+        .contact-form{
+            width: 80%;
+        }
+        h2{
+            font-size: 2em;   
+        }
     }
 }
